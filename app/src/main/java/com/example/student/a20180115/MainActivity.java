@@ -41,4 +41,23 @@ public class MainActivity extends AppCompatActivity {
         queue.add(request);
         queue.start();
     }
+    public void  click2(View v)
+    {
+        RequestQueue queue=Volley.newRequestQueue(MainActivity.this);
+        StringRequest request = new UTF8StringRequest("https://www.mobile01.com/rss/news.xml",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("NET", response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        queue.add(request);
+        queue.start();
+
+    }
 }
